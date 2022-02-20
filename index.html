@@ -25,7 +25,7 @@
         </nav>
         <ul class="list contact">
             <li class="point">
-                <a class="icon link" lang="en" href="mailto:info@devstudio.com" target="_blank" rel="noopener norefferal">
+                <a class="icon link" data-modal-open lang="en"  target="_blank" rel="noopener norefferal">
                 <svg class="icon-mail" width="16" height="12">
                     <use href="./images/sprite.svg#mail"></use>
                 </svg>info@devstudio.com</a>
@@ -103,13 +103,22 @@
             <h2 class="title">Чем мы занимаемся</h2>
             <ul class="list">
                 <li class="point">
-                    <img src="./images/what-we-do/box-1.jpeg" alt="Работа на планшете" width="370">
+                    <img src="./images/what-we-do/box-1.jpeg" alt="Работа на планшете" width="370" height="294">
+                    <div class="thumb">
+                    <h3 class="text-image">Десктопные приложения</h3>
+                    </div>
                 </li>
                 <li class="point">
-                    <img src="./images/what-we-do/box-2.jpeg" alt="Синхронизация ПК и смартфона" width="370">
+                    <img src="./images/what-we-do/box-2.jpeg" alt="Синхронизация ПК и смартфона" width="370" height="294">
+                    <div class="thumb">
+                    <h3 class="text-image">Мобильные приложения</h3>
+                    </div>
                 </li>
                 <li class="point">
-                    <img src="./images/what-we-do/box-3.jpeg" alt="Планшет" width="370">
+                    <img src="./images/what-we-do/box-3.jpeg" alt="Планшет" width="370" height="294">
+                    <div class="thumb">
+                    <h3 class="text-image">Дизайнерские решения</h3>
+                    </div>  
                 </li>
             </ul>
         </div>
@@ -375,6 +384,19 @@
         </div>
     </footer>
 
+    <!-- Модальное окно -->
+
+    <div class="backdrop" data-modal>
+        <div class="modal">
+            <button type="button" class="icon-button" data-modal-close>
+            <!-- <src class="icon" width="11" height="11">
+                <use href="./images/close-black.svg"></use>
+            </src> -->
+            <img src="./images/close-black.svg" alt="кнопка-закрытия" width="11" height="11">
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 
 </body>
 </html>

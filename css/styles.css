@@ -117,6 +117,7 @@ button {
   margin-right: 0;
 }
 .navmenu .link {
+  position: relative;
   display: block;
 
   padding-top: 30px;
@@ -150,9 +151,11 @@ button {
 } */
 .header .icon.link:hover svg {
   fill: var(--brand-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header .icon.link:focus svg {
   fill: var(--brand-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header .link:active,
 .header .link:focus,
@@ -160,6 +163,7 @@ button {
 .street:hover,
 .street:focus {
   color: var(--brand-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header .icon.link {
   display: flex;
@@ -168,7 +172,18 @@ button {
 .link.current {
   color: var(--brand-color);
 }
+.header .link.current::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: block;
 
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--brand-color);
+  border-radius: 2px;
+}
 /* container  */
 .container {
   width: 1200px;
@@ -231,9 +246,13 @@ button {
   color: var(--brand-white);
 
   background-color: var(--brand-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
   border-radius: 4px;
   border: transparent;
+}
+.banner .order:hover,
+.banner .order:focus {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* общее оформление секций  */
@@ -300,7 +319,26 @@ button {
 .section.wedoing {
   padding-top: 0;
 }
+.wedoing .point {
+  position: relative;
+}
+.thumb {
+  position: absolute;
+  bottom: 0;
 
+  width: 100%;
+  padding: 27px;
+  background: rgba(47, 48, 58, 0.8);
+}
+.text-image {
+  font-size: 14px;
+  line-height: 1.1428;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
 /* секция Наша Команда  */
 
 .section.team {
@@ -309,10 +347,16 @@ button {
 .section.team .point {
   background-color: var(--brand-white);
 
+  border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
 }
+/* .section.team .point:hover,
+.section.team .point:focus {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
 .section.team .box {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -359,6 +403,7 @@ button {
 .icon-link:hover,
 .icon-link:focus {
   background-color: var(--brand-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon {
   fill: #afb1b8;
@@ -366,12 +411,15 @@ button {
 .icon:focus,
 .icon:hover {
   fill: var(--brand-white);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-link:hover svg {
   fill: var(--brand-white);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-link:focus svg {
   fill: var(--brand-white);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* секция Наши Клиенты  */
 
@@ -403,12 +451,15 @@ button {
 .clients-link:hover,
 .clients-link:focus {
   border-color: var(--brand-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover svg {
   fill: var(--brand-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:focus svg {
   fill: var(--brand-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* футер  */
@@ -440,6 +491,7 @@ button {
 .footer .link:active,
 .footer .link:focus {
   color: var(--brand-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .container {
@@ -474,6 +526,7 @@ button {
 .footer .icon-link:hover,
 .footer .icon-link:focus {
   background-color: var(--brand-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Страница Портфолио  */
@@ -520,6 +573,9 @@ button {
 
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Портфолио список  */
@@ -536,10 +592,50 @@ button {
 
   background-color: var(--brand-white);
 }
-.list.portfolio .link:hover,
-.list.portfolio .link:focus {
+
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+  width: 370px;
+  height: 294px;
+}
+.overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 63px 24px;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+}
+.text-overlay {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5555;
+
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+}
+
+.list.portfolio .point:hover,
+.list.portfolio .point:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio .point:hover .overlay,
+.portfolio .point:focus .overlay {
+  transform: translateY(0%);
+  opacity: 1;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list.portfolio .point:nth-last-child(3n + 1) {
@@ -578,3 +674,54 @@ button {
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
 }
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  width: 528px;
+  min-height: 581px;
+  padding: 8px;
+  background-color: var(--brand-white);
+}
+.backdrop .icon-button {
+  display: block;
+  margin-left: auto;
+
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+/* .backdrop .icon {
+  fill: #000000;
+} */
