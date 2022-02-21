@@ -707,7 +707,9 @@ button {
   background-color: var(--brand-white);
 }
 .backdrop .icon-button {
-  display: block;
+  display: flex;
+  justify-items: center;
+  align-items: center;
   margin-left: auto;
 
   padding: 8px;
@@ -719,6 +721,8 @@ button {
   box-sizing: border-box;
   border-radius: 50%;
 }
-/* .backdrop .icon {
+.close-block {
+  width: 11px;
+  height: 11px;
   fill: #000000;
-} */
+}
